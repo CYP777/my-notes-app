@@ -1,0 +1,139 @@
+/* นำเข้าฟอนต์น่ารัก ๆ จาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap');
+
+* {
+  font-family: 'Mali', cursive; /* ใช้ฟอนต์ลายมือให้อารมณ์ซอฟต์ๆ */
+}
+
+/* ---------------- การ์ดโน้ต ---------------- */
+.note-card {
+    background-color: #fff5f8; /* สีชมพูพาสเทลอ่อนมาก */
+    border: 2px dashed #ffb6c1; /* ขอบเส้นประสีชมพู */
+    border-radius: 20px; /* มุมโค้งมน */
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2); /* เงาสีชมพูฟุ้งๆ */
+    transition: all 0.3s ease;
+}
+
+.note-card h3 {
+    color: #ff8fa3; /* สีหัวข้อ */
+    margin-top: 0;
+}
+
+.note-card:hover {
+    transform: translateY(-5px) rotate(1deg); /* ขยับขึ้นและเอียงนิดๆ เวลานำเมาส์ไปวาง */
+    box-shadow: 0 8px 16px rgba(255, 182, 193, 0.4);
+}
+
+/* ---------------- แท็ก (Tags) ---------------- */
+.note-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.tag {
+    background-color: #e0f7fa; /* สีฟ้าพาสเทล */
+    color: #00838f;
+    padding: 4px 12px;
+    border-radius: 20px; /* ทรงแคปซูลยา */
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.tag:hover, .tag.active {
+    background-color: #b2ebf2;
+    transform: scale(1.05); /* ขยายขนาดนิดหน่อยเวลาชี้ */
+}
+
+.tag-filter {
+    display: flex;
+    gap: 8px;
+    margin: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ---------------- ปุ่ม (Buttons) ---------------- */
+button {
+    background-color: #ffb6c1; /* พื้นหลังปุ่มสีชมพู */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    margin-right: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(255, 182, 193, 0.4);
+}
+
+button:hover {
+    background-color: #ff9aa2;
+    transform: scale(1.05);
+}
+
+/* ---------------- ช่องค้นหาและฟอร์ม ---------------- */
+.search-bar, input, textarea {
+    width: 100%;
+    border: 2px solid #ffe4e1;
+    border-radius: 15px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: #fffafb;
+}
+
+.search-bar:focus, input:focus, textarea:focus {
+    border-color: #ffb6c1;
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ---------------- หน้าต่างป๊อปอัปแก้ไข (Editor) ---------------- */
+.editor-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 240, 245, 0.6); /* พื้นหลังโปร่งแสงโทนชมพู */
+    backdrop-filter: blur(4px); /* ทำฉากหลังเบลอ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.editor {
+    background-color: white;
+    border: 3px solid #ffe4e1;
+    border-radius: 24px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+    text-align: center;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.editor h2 {
+    color: #ff8fa3;
+    margin-top: 0;
+}
+
+.editor-actions {
+    margin-top: 1rem;
+}
+
+/* แอนิเมชันตอนเปิดป๊อปอัป */
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
